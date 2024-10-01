@@ -65,7 +65,6 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
   }
 };
 
-
 export const sendPasswordResetEmailSuccessfull = async (email) => {
   try {
     const recipient = [
