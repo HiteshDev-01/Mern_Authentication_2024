@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
+    "build": "^0.1.4",
     "framer-motion": "^11.5.4",
     "lucide-react": "^0.441.0",
     "mern_authentication": "file:..",
+    "npm": "^10.8.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.26.2",
+    "run": "^1.5.0",
     "zustand": "^5.0.0-rc.2"
   },
   "devDependencies": {
