@@ -3,7 +3,7 @@ import {
   PASSWORD_RESET_REQUEST_TEMPLATE,
   PASSWORD_RESET_SUCCESS_TEMPLATE,
 } from "./emailTemplates.js";
-import { mailTrapClient, sender } from "../mailtrap/mailTrap.config.js";
+import { mailTrapClient, sender } from "./mailTrap.config.js";
 
 export const sendVarificationEmail = async (email, verificationToken) => {
   const recipient = [{ email }];
