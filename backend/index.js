@@ -1,5 +1,5 @@
 import express from "express";
-import 'dotenv/config'
+import "dotenv/config";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
@@ -12,7 +12,13 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(
+  cors({
+    origin:
+      "https://mern-authentication-2024-oivzmrull-hiteshdev-01s-projects.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use(express.json()); // allows us to parse incoming requests:req.body
 app.use(cookieParser()); // allows us to parse incoming cookies
