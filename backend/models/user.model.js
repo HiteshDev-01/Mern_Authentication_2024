@@ -33,10 +33,10 @@ const userScehma = new mongoose.Schema(
   { timestamps: true }
 );
 
-userScehma.pre("save",async function (next) {
-  if(!this.isModified("password")) return next();
-  this.password = await bcryptjs.hash(this.password,10);
+userScehma.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
+  this.password = await bcryptjs.hash(this.password, 10);
   next();
-})
+});
 
 export const User = mongoose.model("user", userScehma);

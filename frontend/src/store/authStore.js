@@ -1,7 +1,11 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = import.meta.env.NODE_ENV === "development" ? "http://localhost:8080/api/auth" : '/api/auth';
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:4000/api/auth"
+    : "/api/auth";
+console.log(API_URL);
 
 export const useAuthStore = create((set) => ({
   user: null,
@@ -159,9 +163,13 @@ export const useAuthStore = create((set) => ({
   resetPassword: async (token, password) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.post(`${API_URL}/reset-password/${token}`, {
-        password,
-      }, { withCredentials: true });
+      const response = await axios.post(
+        `${API_URL}/reset-password/${token}`,
+        {
+          password,
+        },
+        { withCredentials: true }
+      );
       set({ message: response.data.message, isLoading: false });
     } catch (error) {
       set({

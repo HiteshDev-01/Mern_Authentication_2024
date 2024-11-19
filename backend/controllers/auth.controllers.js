@@ -48,6 +48,7 @@ export const signup = async (req, res) => {
         password: undefined,
       },
     });
+    console.log(user);
   } catch (error) {
     console.error("Error:", error.message);
     res.status(400).json({ success: false, message: "User creation Failed !" });

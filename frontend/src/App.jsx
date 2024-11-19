@@ -13,7 +13,7 @@ import ResetPassworPage from "./pages/ResetPassworPage.jsx";
 
 const RedirectAuthenticatedUser = ({ children }) => {
   const { user, isAuthenticated } = useAuthStore();
-  if (isAuthenticated && user.isVerified) {
+  if (isAuthenticated && user?.isVerified) {
     return <Navigate to="/" replace />;
   }
   return children;
@@ -21,11 +21,11 @@ const RedirectAuthenticatedUser = ({ children }) => {
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, user } = useAuthStore();
+  4;
 
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
-
   if (!user.isVerified) {
     return <Navigate to="/verify-email" replace />;
   }
@@ -35,6 +35,7 @@ const ProtectedRoute = ({ children }) => {
 
 function App() {
   const { isCheckingAuth, checkAuth } = useAuthStore();
+
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
